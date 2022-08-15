@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex flex-row justify-between">
-      <p>{{title}}</p>
+      <p class="text-white">{{title}}</p>
       <p>{{percent}}%</p>
     </div>
     <div class="bar">

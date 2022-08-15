@@ -55,11 +55,7 @@ li {
 }
 
 hr {
-  color: var(--secondary-col);
-  background-color: var(--secondary-col);
-  display: block;
-  border: 2px solid var(--secondary-col);
-  margin: 16px auto 16px auto;
+  @apply block my-8 bg-secondary border-2 border-solid border-secondary;
   width: 70%;
 }
 

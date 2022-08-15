@@ -23,7 +23,7 @@
         <li><a>Twitter</a></li>
       </ul>
     </section>
-    <section>
+    <section class="mb-10">
       <h2>Skills & Qualifications</h2>
       <ul>
         <li>✔️  5 Years experience with software development</li>
@@ -32,7 +32,7 @@
       </ul>
     </section>
     <hr>
-    <section>
+    <section class="mb-10">
       <div class="grid grid-cols-2 gap-6">
         <ProgressBar :title="'C#'" :percent="90"/>
         <ProgressBar :title="'C++'" :percent="60"/>
@@ -44,7 +44,7 @@
     <section>
       <h2>Tech Stacks</h2>
       <h3>Programmer</h3>
-      <div>
+      <div class="mb-4">
         <img class="tool-icon" src="../assets/icon_vs.svg">
         <img class="tool-icon" src="../assets/icon_ws.svg">
         <img class="tool-icon" src="../assets/icon_git.svg">
@@ -60,6 +60,11 @@
     </section>
     <section>
       <h2>Languages</h2>
+      <div class="flex">
+        <ProgressCircle :title="'Russian'" :percent="100" :size="80"/>
+        <ProgressCircle :title="'English'" :percent="70" :size="80"/>
+        <ProgressCircle :title="'German'" :percent="10" :size="80"/>
+      </div>
     </section>
     <section>
       <h2>Projects & Accomplishments</h2>
@@ -79,10 +84,11 @@
 
 <script>
 import ProgressBar from "@/components/ProgressBar";
+import ProgressCircle from "@/components/ProgressCircle";
 
 export default {
   name: "MainPage",
-  components: {ProgressBar}
+  components: {ProgressCircle, ProgressBar}
 }
 </script>
 
