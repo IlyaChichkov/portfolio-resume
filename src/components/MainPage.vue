@@ -3,14 +3,14 @@
     <section>
       <div class="flex">
         <img class="avatar-icon" src="../assets/avatar.png">
-        <div class="ml-6">
-          <h1 class="font-bold mt-0">{{$t("profile.name")}}</h1>
-          <p>Student, software and games developer</p>
+        <div class="flex-col justify-between ml-6">
+          <h1 class="font-bold mt-0">{{$t("profile.title")}}</h1>
+          <p>{{$t('profile.desc')}}</p>
           <div class="flex">
-            <p class="mr-2 font-bold text-white">City:</p>
-            <p class="mr-4">Moscow</p>
-            <p class="mr-2 font-bold text-white">Age:</p>
-            <p class="mr-2">19</p>
+            <p class="mr-2 my-0 font-bold text-white">{{$t('profile.city')}}</p>
+            <p class="mr-4 my-0">{{$t('profile.moscow')}}</p>
+            <p class="mr-2 my-0 font-bold text-white">{{$t('profile.age')}}</p>
+            <p class="mr-2 my-0">19</p>
           </div>
         </div>
       </div>
@@ -24,11 +24,11 @@
       </ul>
     </section>
     <section class="mb-10">
-      <h2>Skills & Qualifications</h2>
+      <h2>{{$t('titles.skills')}}</h2>
       <ul>
-        <li>✔️  5 Years experience with software development</li>
-        <li>✔️  Active user of Git version control system </li>
-        <li>✔️  Extensive knowledge in Unity Engine</li>
+        <li>{{$t('skills.one')}}</li>
+        <li>{{$t('skills.two')}}</li>
+        <li>{{$t('skills.three')}}</li>
       </ul>
     </section>
     <hr>
@@ -42,8 +42,8 @@
     </section>
     <hr>
     <section>
-      <h2>Tech Stacks</h2>
-      <h3>Programmer</h3>
+      <h2>{{$t('titles.tech')}}</h2>
+      <h3>{{$t('titles.programmer')}}</h3>
       <div class="mb-4">
         <img class="tool-icon" src="../assets/icon_vs.svg">
         <img class="tool-icon" src="../assets/icon_ws.svg">
@@ -51,7 +51,7 @@
         <img class="tool-icon" src="../assets/icon_qt.svg">
         <img class="tool-icon" src="../assets/icon_unity.svg">
       </div>
-      <h3>Designer</h3>
+      <h3>{{$t('titles.designer')}}</h3>
       <div>
         <img class="tool-icon" src="../assets/icon_ai.svg">
         <img class="tool-icon" src="../assets/icon_ps.svg">
@@ -59,7 +59,7 @@
       </div>
     </section>
     <section>
-      <h2>Languages</h2>
+      <h2>{{$t('titles.lang')}}</h2>
       <div class="flex">
         <ProgressCircle :title="'Russian'" :percent="100" :size="80"/>
         <ProgressCircle :title="'English'" :percent="70" :size="80"/>
@@ -67,15 +67,15 @@
       </div>
     </section>
     <section>
-      <h2>Projects & Accomplishments</h2>
+      <h2>{{$t('titles.proj')}}</h2>
       <div class="border-solid border-0 border-l-4 border-l-red pl-4">
-        <p>🏆 Mobile arcade game "Space Frontline"</p>
-        <p>🏆 Todo app on C++ using QT</p>
-        <p>🏆 "Dawn of white" strategy for PC</p>
+        <p>{{$t('projects.one')}}</p>
+        <p>{{$t('projects.two')}}</p>
+        <p>{{$t('projects.three')}}</p>
       </div>
     </section>
     <section>
-      <h2>Email</h2>
+      <h2>{{$t('titles.email')}}</h2>
       <p>ilya.chichkov.dev@gmail.com</p>
     </section>
     <footer class="block h-20"></footer>

@@ -5,6 +5,7 @@
 </template>
 
 <script>
+
 export default {
   name: "LanguageSwitch",
   data(){
@@ -19,8 +20,13 @@ export default {
       }else{
         this.lang = 'EN'
       }
-      localStorage.setItem('lang', this.lang)
+      localStorage.setItem('lang', this.lang);
+      this.$i18n.locale = this.lang.toLowerCase();
     }
+  },
+  mounted() {
+    this.lang = localStorage.getItem('lang') || 'EN';
+    this.$i18n.locale = this.lang.toLowerCase();
   }
 }
 </script>
