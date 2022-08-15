@@ -4,7 +4,7 @@
       <div class="flex">
         <img class="avatar-icon" src="../assets/avatar.png">
         <div class="ml-6">
-          <h1 class="font-bold mt-0">Ilya Chichkov</h1>
+          <h1 class="font-bold mt-0">{{$t("profile.name")}}</h1>
           <p>Student, software and games developer</p>
           <div class="flex">
             <p class="mr-2 font-bold text-white">City:</p>
@@ -32,7 +32,7 @@
       </ul>
     </section>
     <hr>
-    <section class="mb-10">
+    <section class="pb-6">
       <div class="grid grid-cols-2 gap-6">
         <ProgressBar :title="'C#'" :percent="90"/>
         <ProgressBar :title="'C++'" :percent="60"/>
