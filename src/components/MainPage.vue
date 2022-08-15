@@ -17,10 +17,10 @@
     </section>
     <section>
       <ul class="flex justify-around links">
-        <li><a>Github</a></li>
-        <li><a>Telegram</a></li>
-        <li><a>VK</a></li>
-        <li><a>Twitter</a></li>
+        <li><a href="https://github.com/IlyaChichkov">Github</a></li>
+        <li><a href="https://t.me/Ilya_Chichkov">Telegram</a></li>
+        <li><a href="https://vk.com/chichkov_ilya">VK</a></li>
+        <li><a href="https://twitter.com/RedEye_Games">Twitter</a></li>
       </ul>
     </section>
     <section class="mb-10">
@@ -97,6 +97,7 @@ export default {
   width: 128px;
   height: 128px;
 }
+
 .tool-icon{
   @apply mr-4;
   max-width: 42px;

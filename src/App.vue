@@ -29,7 +29,7 @@ h1, h2, h3, h4 {
 }
 
 h1, h2 {
-  @apply text-black dark:text-white font-rubik m-0 mt-8;
+  @apply text-black dark:text-white font-rubik m-0 my-2;
 }
 
 h1 {
@@ -64,7 +64,7 @@ body {
 }
 
 a {
-  color: var(--red-col);
+  @apply no-underline text-red hover:underline;
 }
 
 #app {
