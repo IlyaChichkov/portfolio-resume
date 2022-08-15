@@ -1,13 +1,16 @@
 <template>
   <MainPage/>
+  <LanguageSwitch/>
 </template>
 
 <script>
 import MainPage from "@/components/MainPage";
+import LanguageSwitch from "@/components/LanguageSwitch";
 
 export default {
   name: 'App',
   components: {
+    LanguageSwitch,
     MainPage
   }
 }
@@ -29,7 +32,7 @@ h1, h2, h3, h4 {
 }
 
 h1, h2 {
-  @apply text-black dark:text-white font-rubik m-0 my-2;
+  @apply text-black dark:text-white font-rubik m-0 mb-4 mt-7;
 }
 
 h1 {
@@ -37,7 +40,7 @@ h1 {
 }
 
 h2 {
-  @apply text-2xl font-medium;
+  @apply text-3xl font-medium;
 }
 
 h3 {
@@ -70,6 +73,6 @@ a {
 #app {
   @apply flex flex-col mx-auto sm:w-11/12 md:w-2/3 lg:w-3/5 xl:w-2/5;
   margin-top: 60px;
-
+  min-width: 520px;
 }
 </style>
