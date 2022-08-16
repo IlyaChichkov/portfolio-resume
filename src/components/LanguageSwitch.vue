@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed l-switch">
+  <div class="absolute md:fixed l-switch">
     <button class="l-button" v-on:click="changeLang">{{lang}}</button>
   </div>
 </template>
@@ -33,8 +33,8 @@ export default {
 
 <style scoped>
 .l-switch{
+  @apply right-2 sm:right-5;
   top: 20px;
-  right: 40px;
 }
 .l-button{
   @apply bg-transparent border-none text-gray font-bold font-rubik text-base;

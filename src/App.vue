@@ -72,7 +72,7 @@ a {
 
 #app {
   @apply flex flex-col mx-auto sm:w-11/12 md:w-2/3 lg:w-3/5 xl:w-2/5;
-  margin-top: 60px;
+  @apply mt-24;
   min-width: 520px;
 }
 </style>

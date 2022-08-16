@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex items-center flex-col justify-center p-4">
     <svg :width="size" :height="size" viewBox="0 0 80 80">
       <foreignObject x="0" y="11" width="80" height="80">
         <p class="text-red font-medium text-center align-baseline">{{percent}}%</p>
