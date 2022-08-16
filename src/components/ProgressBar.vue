@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="bar-container p-3 border-red/[.6] border-solid border-0.5 rounded-lg">
     <div class="flex flex-row justify-between">
-      <p class="text-white">{{title}}</p>
-      <p>{{percent}}%</p>
+      <p class="text-white mt-0">{{title}}</p>
+      <p class="mt-0">{{percent}}%</p>
     </div>
     <div class="bar">
       <div class="fill" :style="getProgress"></div>
@@ -37,5 +37,12 @@ export default {
   width: 100%;
   background-color: #F66663;
   border-radius: 50px;
+}
+.bar-container{
+  transition: all 150ms ease-in-out;
+  box-shadow: 0px 0px 0px 0px var(--red-col);
+}
+.bar-container:hover{
+  box-shadow: 0px 0px 8px 1px var(--red-col);
 }
 </style>
