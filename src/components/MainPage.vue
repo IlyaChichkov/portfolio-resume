@@ -41,6 +41,7 @@
     <hr>
     <section>
       <h2>{{$t('titles.tech')}}</h2>
+      <p>{{$t('tool-data.info')}}:</p>
       <h3>{{$t('titles.programmer')}}</h3>
       <div class="mb-4">
         <img class="tool-icon" src="../assets/icon_vs.svg">
@@ -73,10 +74,8 @@
       </div>
     </section>
     <section>
-      <h2>{{$t('titles.email')}}</h2>
-      <p>ilya.chichkov.dev@gmail.com</p>
-      <button>
-        <router-link :to="{name: 'contact'}">Contact Me</router-link>
+      <button class="btn-primary mt-8">
+        <router-link class="text-white" :to="{name: 'contact'}">Contact Me</router-link>
       </button>
     </section>
     <footer class="block h-20"></footer>
