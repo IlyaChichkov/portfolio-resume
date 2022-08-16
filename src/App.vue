@@ -67,12 +67,12 @@ body {
 }
 
 a {
-  @apply no-underline text-red hover:underline;
+  @apply no-underline text-red hover:text-white;
 }
 
 #app {
-  @apply flex flex-col mx-auto sm:w-11/12 md:w-2/3 lg:w-3/5 xl:w-2/5;
+  @apply flex flex-col mx-auto w-11/12 sm:w-11/12 md:w-2/3 lg:w-3/5 xl:w-2/5;
   @apply mt-24;
-  min-width: 520px;
+  min-width: 320px;
 }
 </style>
