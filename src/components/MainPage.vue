@@ -75,6 +75,9 @@
     <section>
       <h2>{{$t('titles.email')}}</h2>
       <p>ilya.chichkov.dev@gmail.com</p>
+      <button>
+        <router-link :to="{name: 'contact'}">Contact Me</router-link>
+      </button>
     </section>
     <footer class="block h-20"></footer>
   </div>

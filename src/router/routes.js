@@ -1,13 +1,23 @@
+import {createRouter, createWebHashHistory} from 'vue-router'
 import MainPage from "@/components/MainPage";
 import ContactMe from "@/components/ContactMe";
 
 const routes = [
-    { path: '/', component: MainPage },
-    { path: '/contact', component: ContactMe }
+    {
+        path: '/',
+        name: 'main',
+        component: MainPage
+    },
+    {
+        path: '/contact',
+        name: 'contact',
+        component: ContactMe
+    }
 ]
 
-// 3. Создаём экземпляр маршрутизатора и передаём маршруты в опции `routes`
-// Вы можете передавать и дополнительные опции, но пока не будем усложнять.
-export const router = new VueRouter({
-    routes // сокращённая запись для `routes: routes`
+const router = createRouter({
+    history: createWebHashHistory(),
+    routes
 })
+
+export default router
