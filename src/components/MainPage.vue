@@ -40,7 +40,7 @@
     </section>
     <section>
       <button class="btn-primary mt-8">
-        <router-link class="text-white" :to="{name: 'contact'}">Contact Me</router-link>
+        <router-link class="text-white px-5" :to="{name: 'contact'}">Contact Me</router-link>
       </button>
     </section>
     <footer class="block h-20"></footer>

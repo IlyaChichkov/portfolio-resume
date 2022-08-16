@@ -47,7 +47,7 @@ li {
 }
 
 hr {
-    @apply block my-8 bg-secondary border-2 border-solid border-secondary;
+    @apply block my-8 bg-secondary border-0.5 border-solid border-secondary;
     width: 70%;
 }
 
