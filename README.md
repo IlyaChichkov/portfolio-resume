@@ -1,4 +1,4 @@
-# my-resume
+# portfolio-resume
 
 ## Project setup
 ```
