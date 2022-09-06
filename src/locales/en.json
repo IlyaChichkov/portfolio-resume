@@ -1,0 +1,49 @@
+{
+  "profile": {
+    "title": "Ilya Chichkov",
+    "desc": "Student, software and games developer",
+    "city": "City",
+    "moscow": "Moscow",
+    "age": "Age"
+  },
+  "titles": {
+    "skills": "Skills & Qualifications",
+    "tech": "Tools",
+    "lang": "Languages",
+    "proj": "Projects & Accomplishments",
+    "email": "Email",
+    "programmer": "Programmer",
+    "designer": "Designer",
+    "contact": "Contact Me"
+  },
+  "tool-data": {
+    "info": "I use different tool to achieve fast and efficient workflow. Diversified involvement in processes gave me experience not only as a developer, but also as a designer. Here are some programs I use frequently for my work"
+  },
+  "projects": {
+    "one": "\uD83C\uDFC6 Mobile arcade game \"Space Frontline\"",
+    "two": "\uD83C\uDFC6 \"Dawn of white\" strategy for PC",
+    "three": ""
+  },
+  "skills": {
+    "one": "✔️ 5 Years experience with software development",
+    "two": "✔️ Active user of Git version control system",
+    "three": "✔️ Extensive knowledge in Unity Engine"
+  },
+  "languages":{
+    "ru": "Russian (Native)",
+    "en": "English (C-1)",
+    "ge": "German (Beginner)"
+  },
+  "other": {
+    "return-warning": "Return back"
+  },
+  "contact-form": {
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "btn": "Send",
+    "btn-s": "Success",
+    "message-send-error": "Error:",
+    "message-send-success": "Message sent!"
+  }
+}

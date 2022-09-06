@@ -14,26 +14,39 @@
       </button>
       <h2 class="ml-8">{{$t('titles.contact')}}</h2>
     </div>
-    <form class="grid grid-cols-2 gap-2" v-on:submit.prevent="sendEmail">
+    <form class="grid grid-cols-2 gap-2" v-on:submit.prevent="formHandler($event)">
       <div class="flex flex-col">
-        <label>{{$t('contact-form.name')}}</label>
         <input v-model="name" type="text" :placeholder="$t('contact-form.name')" required>
       </div>
       <div class="flex flex-col">
-        <label>{{$t('contact-form.email')}}</label>
-        <input v-model="email" type="email" placeholder="name@email.com" required>
+        <input v-model="email" type="email" :placeholder="$t('contact-form.email')" required>
       </div>
       <textarea v-model="message" class="col-span-2 resize-none mb-2 h-28" :placeholder="$t('contact-form.message')" required></textarea>
-      <button type="submit" value="Send" class="btn-primary col-span-2">{{ submitBtnText }}</button>
+      <select class="w-full sm:w-3/5 focus-visible:outline-red focus-visible:border-none" name="messageType">
+        <option selected>Telegram</option>
+        <option >Email</option>
+      </select>
+      <div class="flex flex-row justify-end">
+        <button type="submit" value="Send" class="w-full sm:w-3/5 btn-primary col-span-1">{{ submitBtnText }}</button>
+      </div>
     </form>
-    <p v-if="sent">{{$t('other.return-warning')}}... {{ returnCooldown }}</p>
   </div>
+  <transition>
+    <div v-if="showModal">
+      <div @click="showModal = false" class="modal-w">
+        <p class="text-white">{{modalMessage}}</p>
+        <button @click="showModal = false" class="btn-primary z-10">OK</button>
+      </div>
+      <div class="modal-bg" @click="showModal = false"></div>
+    </div>
+  </transition>
 </template>
 
 <script>
 import emailjs from 'emailjs-com';
 import MyProfile from "@/components/MyProfile";
 import MyLinks from "@/components/MyLinks";
+import axios from "axios";
 
 export default {
   name: "ContactMe",
@@ -45,7 +58,9 @@ export default {
       message: '',
       sent: false,
       returnUser: false,
-      returnCooldown: 10
+      returnCooldown: 10,
+      showModal: false,
+      modalMessage: null
     }
   },
   computed: {
@@ -54,6 +69,15 @@ export default {
     }
   },
   methods: {
+    formHandler(e){
+      const messageType = e.target.elements.messageType.value;
+      if(messageType === 'Email'){
+        this.sendEmail();
+      }else if(messageType === 'Telegram'){
+        this.sendTelegramMessage();
+      }
+      console.log(e.target.elements.messageType.value)
+    },
     sendEmail() {
       try {
         emailjs.send(
@@ -70,14 +94,34 @@ export default {
         console.log({error})
       } finally {
         this.sent = true;
-        this.returnUser = true;
-
       }
       // Reset form field
       this.name = ''
       this.email = ''
       this.message = ''
     },
+    async sendTelegramMessage(){
+      const botToken = '5310635683:AAH-1wxOAWm7qo0a21cV6aORKoEWJN8R7PE';
+      const chatId = '-1001502195289';
+      let message = `✉️Новое сообщение!%0A<b>Имя:</b> ${this.name}%0A<b>Почта:</b> ${this.email}%0A"${this.message.toString()}"`;
+      message = message.replaceAll('\n', '%0A');
+      message = message.replaceAll(' ', '+');
+
+      await axios.get(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&parse_mode=html&text=${message}`)
+          .then((responce) => {
+            if(responce.status.toString() === '200') {
+              console.log('Success!');
+              this.modalMessage = this.$t('contact-form.message-send-success');
+              this.showModal = true;
+            }
+          })
+          .catch((error) => {
+            console.log('Error!' + error);
+            this.modalMessage = this.$t('contact-form.message-send-error') + ' ' +
+                error.code + '; ' + error;
+            this.showModal = true;
+          })
+    }
   },
   watch: {
     returnUser(value) {
@@ -104,5 +148,45 @@ export default {
 </script>
 
 <style scoped>
+select{
+  @apply bg-red border-none rounded text-white font-sans px-3;
+}
 
+.modal-w{
+  @apply absolute bg-primary rounded-lg px-4 py-2 w-[56%] sm:w-[410px]
+  h-[14%] sm:h-[164px] shadow-3xl shadow-red-200 flex flex-col justify-center
+  min-w-[300px] z-20 opacity-80;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 200ms ease-in;
+}
+
+.modal-bg{
+  content: '';
+  @apply fixed z-10 top-0 bottom-0 left-0 right-0 bg-primary opacity-80 backdrop-blur-xl;
+  transition: all 200ms ease-in;
+}
+
+.modal-w:active{
+  @apply brightness-110;
+}
+
+.modal-bg:active{
+  @apply brightness-110;
+}
+
+.modal-w>p{
+  @apply text-2xl text-center;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.52s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
 </style>

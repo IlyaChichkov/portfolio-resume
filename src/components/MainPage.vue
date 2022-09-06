@@ -38,9 +38,9 @@
     <section>
       <MyProjectsSection/>
     </section>
-    <section>
-      <button class="btn-primary mt-8">
-        <router-link class="text-white px-5" :to="{name: 'contact'}">Contact Me</router-link>
+    <section class="flex flex-row justify-center">
+      <button class="btn-primary mt-8 px-5 py-5">
+        <router-link class="text-white" :to="{name: 'contact'}">Contact Me</router-link>
       </button>
     </section>
     <footer class="block h-20"></footer>

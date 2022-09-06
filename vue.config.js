@@ -1,7 +1,7 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true,
-  publicPath: '/my-resume/',
+  publicPath: '/portfolio-resume/',
 
   pluginOptions: {
     i18n: {

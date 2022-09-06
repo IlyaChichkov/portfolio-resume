@@ -60,7 +60,16 @@ a {
 }
 
 button.btn-primary{
-    @apply bg-red border-none p-2 rounded font-sans font-normal text-white
+    @apply bg-red border-none px-5 py-3 rounded font-sans font-normal text-white;
+    transition: all 100ms ease-in;
+}
+
+button.btn-primary:hover{
+    @apply bg-red-100;
+}
+
+button.btn-primary:active{
+    @apply bg-red-200;
 }
 
 textarea{
