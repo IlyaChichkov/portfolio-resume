@@ -29,7 +29,7 @@
     "two": "✔️ Active user of Git version control system",
     "three": "✔️ Extensive knowledge in Unity Engine"
   },
-  "languages":{
+  "languages": {
     "ru": "Russian (Native)",
     "en": "English (C-1)",
     "ge": "German (Beginner)"
@@ -45,5 +45,14 @@
     "btn-s": "Success",
     "message-send-error": "Error:",
     "message-send-success": "Message sent!"
+  },
+  "prj-web": {
+    "password-generator": "Passwords generator app with adjustable length and type of characters.",
+    "bank-card": "Interactive form for filling in bank card data",
+    "storage-layout": "Adaptive component for a cloud storage site",
+    "tip-calc": "A web application that allows you to calculate the tips by the percent and number of people for input",
+    "todo-app": "A ToDo website with filter for completed and active tasks and a drag&drop function",
+    "tutor-site": "Tutor landing with a form for sign in"
   }
+}
 }

@@ -17,9 +17,9 @@
     <hr>
     <section class="">
       <div class="flex-col sm:grid grid-cols-2 gap-6">
+        <ProgressBar class="mb-2 sm:mb-0" :title="'C++'" :percent="70"/>
         <ProgressBar class="mb-2 sm:mb-0" :title="'C#'" :percent="90"/>
-        <ProgressBar class="mb-2 sm:mb-0" :title="'C++'" :percent="60"/>
-        <ProgressBar class="mb-2 sm:mb-0" :title="'Python'" :percent="20"/>
+        <ProgressBar class="mb-2 sm:mb-0" :title="'Python'" :percent="30"/>
         <ProgressBar :title="'JS'" :percent="70"/>
       </div>
     </section>
@@ -32,7 +32,7 @@
       <div class="flex justify-center sm:justify-start">
         <ProgressCircle :title="$t('languages.ru')" :percent="100" :size="80"/>
         <ProgressCircle :title="$t('languages.en')" :percent="70" :size="80"/>
-        <ProgressCircle :title="$t('languages.ge')" :percent="10" :size="80"/>
+        <ProgressCircle :title="$t('languages.ge')" :percent="5" :size="80"/>
       </div>
     </section>
     <section>
