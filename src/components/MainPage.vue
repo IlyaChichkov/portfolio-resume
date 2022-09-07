@@ -5,6 +5,11 @@
     </section>
     <section>
       <MyLinks/>
+      <router-link class="text-white" :to="{name: 'contact'}">
+        <button class="btn-primary w-full">
+          Contact Me
+        </button>
+      </router-link>
     </section>
     <section class="mb-10">
       <h2>{{$t('titles.skills')}}</h2>
@@ -39,9 +44,11 @@
       <MyProjectsSection/>
     </section>
     <section class="flex flex-row justify-center">
-      <button class="btn-primary mt-8 px-5 py-5">
-        <router-link class="text-white" :to="{name: 'contact'}">Contact Me</router-link>
-      </button>
+      <router-link class="text-white" :to="{name: 'contact'}">
+        <button class="btn-primary mt-8 px-5 py-5">
+          Contact Me
+        </button>
+      </router-link>
     </section>
     <footer class="block h-20"></footer>
   </div>
