@@ -97,3 +97,9 @@ button.btn-round{
     @apply mt-24;
     min-width: 320px;
 }
+
+@screen md{
+    section.desktop-container{
+        @apply flex flex-col items-center;
+    }
+}

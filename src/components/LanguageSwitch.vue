@@ -27,6 +27,15 @@ export default {
   mounted() {
     this.lang = localStorage.getItem('lang') || 'EN';
     this.$i18n.locale = this.lang.toLowerCase();
+
+    var userLang = navigator.language || navigator.userLanguage;
+
+    if(userLang.toString() == 'ru' || userLang.toString() == 'en'){
+      this.$i18n.locale = userLang;
+    }else{
+      this.$i18n.locale = 'en';
+    }
+    this.lang = this.$i18n.locale.toUpperCase();
   }
 }
 </script>

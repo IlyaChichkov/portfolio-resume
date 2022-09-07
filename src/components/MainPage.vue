@@ -35,7 +35,7 @@
         <ProgressCircle :title="$t('languages.ge')" :percent="5" :size="80"/>
       </div>
     </section>
-    <section>
+    <section class="desktop-container">
       <MyProjectsSection/>
     </section>
     <section class="flex flex-row justify-center">
