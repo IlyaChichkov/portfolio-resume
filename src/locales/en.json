@@ -47,11 +47,11 @@
     "message-send-success": "Message sent!"
   },
   "prj-web": {
-    "password-generator": "Passwords generator app with adjustable length and type of characters.",
-    "bank-card": "Interactive form for filling in bank card data",
-    "storage-layout": "Adaptive component for a cloud storage site",
-    "tip-calc": "A web application that allows you to calculate tips by the percent and number of people for input",
-    "todo-app": "A ToDo website with filter for completed and active tasks and a drag and drop function",
-    "tutor-site": "Tutor landing with a form for sign in"
+    "password-generator": "\uD83C\uDFC6 Passwords generator app with adjustable length and type of characters.",
+    "bank-card": "\uD83C\uDFC6 Interactive form for filling in bank card data",
+    "storage-layout": "\uD83C\uDFC6 Adaptive component for a cloud storage site",
+    "tip-calc": "\uD83C\uDFC6 A web application that allows you to calculate tips by the percent and number of people for input",
+    "todo-app": "\uD83C\uDFC6 A ToDo website with filter for completed and active tasks and a drag and drop function",
+    "tutor-site": "\uD83C\uDFC6 Tutor landing with a form for sign in"
   }
 }

@@ -3,51 +3,10 @@
     <h2>{{ $t('titles.proj') }}</h2>
     <div class="">
       <ul class="projects-list">
-        <li @click="openImgPreview" class="project-block">
-          <p class="project-desc">{{ $t('prj-web.password-generator') }}</p>
-          <div class="relative">
-            <img class="image" src="../assets/screenshots/password-generator.png"
-                 alt="password-generator screenshot">
-            <a class="project-link" href="https://github.com/IlyaChichkov/password-generator" target="_blank" >
-              <svg class="link-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                <path d="M 18 5 L 18 7 L 23.5625 7 L 11.28125 19.28125 L 12.71875 20.71875 L 25 8.4375 L 25 14 L 27 14 L 27 6 L 27 5 L 26 5 L 18 5 z M 5 9 L 5 27 L 23 27 L 23 14 L 21 16 L 21 25 L 7 25 L 7 11 L 16 11 L 18 9 L 5 9 z"/>
-              </svg>
-            </a>
-          </div>
-        </li>
-        <li @click="openImgPreview" class="project-block">
-          <p class="project-desc">{{ $t('prj-web.todo-app') }}</p>
-          <img class="image" src="../assets/screenshots/todo-app.png"
-               alt="todo-app screenshot">
-        </li>
-        <li @click="openImgPreview" class="project-block">
-          <p class="project-desc">{{ $t('prj-web.bank-card') }}</p>
-          <img class="image" src="../assets/screenshots/bank-card.png"
-               alt="bank-card screenshot">
-        </li>
-        <li @click="openImgPreview" class="project-block">
-          <p class="project-desc">{{ $t('prj-web.tip-calc') }}</p>
-          <img class="image" src="../assets/screenshots/tip-calc.png"
-               alt="tip-calc screenshot">
-        </li>
-        <li @click="openImgPreview" class="project-block">
-          <p class="project-desc">{{ $t('prj-web.tutor-site') }}</p>
-          <img class="image" src="../assets/screenshots/tutor-site.png"
-               alt="tutor-site screenshot">
-        </li>
-        <li @click="openImgPreview" class="project-block">
-          <p class="project-desc">{{ $t('prj-web.storage-layout') }}</p>
-          <img class="image" src="../assets/screenshots/storage-layout.png"
-               alt="storage-layout screenshot">
-        </li>
-        <li @click="openImgPreview" class="project-block">
-          <p class="project-desc">{{ $t('projects.one') }}</p>
-          <img class="image" src="../assets/space-front.png"
-               alt="space front screenshot">
-        </li>
-        <li @click="openImgPreview" class="project-block">
-          <p class="project-desc">{{ $t('projects.two') }}</p>
-          <img class="image" src="../assets/dawn-of-white.jpg">
+        <li @click="openImgPreview(proj)" v-for="proj in myProjects" v-bind:key="proj.id" class="project-block">
+          <p class="project-desc">{{ this.$t(proj.descTextId) }}</p>
+          <img class="image" :src="proj.previewSrc"
+               :alt="proj.altText">
         </li>
       </ul>
     </div>
@@ -56,7 +15,7 @@
         <div class="flex flex-col justify-center items-center">
           <img class="img-preview" :src="imgPreviewSrc" alt="preview screenshot"/>
           <div>
-            <p class="preview-desc">{{previewDesc}}</p>
+            <p class="preview-desc">{{ this.$t(previewDesc) }}</p>
           </div>
         </div>
       </div>
@@ -65,23 +24,23 @@
 </template>
 
 <script>
+import {portfolioProjects} from "@/app/projects.data";
+
 export default {
   name: "MyProjectsSection",
   data() {
     return {
       showImgPreview: false,
       previewDesc: '',
-      imgPreviewSrc: ''
+      imgPreviewSrc: '',
+      myProjects: portfolioProjects
     }
   },
   methods: {
-    openImgPreview: function (e) {
-      this.previewDesc = e.target.getElementsByClassName('project-desc')[0].innerHTML;
-      this.imgPreviewSrc = e.target.getElementsByClassName('image')[0].src;
-      console.log(this.imgPreviewSrc)
-
-      if(this.imgPreviewSrc)
-        this.showImgPreview = true;
+    openImgPreview: function (project) {
+      this.previewDesc = project.descTextId;
+      this.imgPreviewSrc = project.previewSrc;
+      this.showImgPreview = true;
     },
     closeImgPreview: function () {
       this.showImgPreview = false;
@@ -112,7 +71,7 @@ export default {
   @apply border-l-white;
 }
 .preview-desc{
-  @apply text-xl text-white;
+  @apply text-xl text-white px-2;
   text-shadow: #020b13 2px 3px 5px;
 }
 
@@ -152,6 +111,9 @@ div.projects {
   @apply  md:w-[110%] lg:w-[130%];
 }
 @screen md{
+  .project-block:hover {
+    @apply border-l-red;
+  }
   .projects-list{
     @apply gap-2 border-none grid-cols-2 auto-rows-auto justify-items-stretch auto-cols-max;
   }
